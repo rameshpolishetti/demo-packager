@@ -1,13 +1,14 @@
 # Demo Application
+This is a POC demo application created to evaluate `cmake` as a build tool for a Java-based application.
 
-## Setup and Run
-
+## Getting Started
+To build and run this demo locally, follow the steps outlined below.
 ```bash
-# Build
+git clone git@github.com:rameshpolishetti/demo-packager.git
+cd demo-packager
 mvn clean package
-
-# Run
 java -cp "target/demo-app-1.0-SNAPSHOT.jar:target/lib/log4j-api-2.20.0.jar:target/lib/log4j-core-2.20.0.jar" com.csg.demo.DemoApp
+
 ```
 
 ## Package
