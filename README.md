@@ -1,5 +1,5 @@
 # Demo Application
-This is a POC demo application created to evaluate `cmake` as a build tool for a Java-based application.
+This is a POC demo application created to evaluate `cmake`, `jpackage` and `izpack` build tools for a Java-based application.
 
 ## Getting Started
 To build and run this demo locally, follow the steps outlined below.
@@ -11,7 +11,19 @@ java -cp "target/demo-app-1.0-SNAPSHOT.jar:target/lib/log4j-api-2.20.0.jar:targe
 
 ```
 
-## Package
+## Package using jpackage
+
+### exe - Windows
+
+```bash
+jpackage --type exe --input target --name DemoApp --main-jar demo-app-1.0-SNAPSHOT.jar --main-class com.csg.demo.DemoApp --icon src/main/resources/app-icon.ico --win-menu --win-shortcut
+```
+
+### icon
+<img src="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/48/gtk3-demo-icon.png" width="48" height="48">
+
+
+## Package using cmake
 
 ### DEB - Ubuntu
 ```bash

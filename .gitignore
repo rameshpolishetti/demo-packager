@@ -1,2 +1,6 @@
 target/
+logs/
 *.log
+.vscode/
+*.tmp
+build/
