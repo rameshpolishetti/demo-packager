@@ -16,7 +16,47 @@ java -cp "target/demo-app-1.0-SNAPSHOT.jar:target/lib/log4j-api-2.20.0.jar:targe
 ### exe - Windows
 
 ```bash
-jpackage --type exe --input target --name DemoApp --main-jar demo-app-1.0-SNAPSHOT.jar --main-class com.csg.demo.DemoApp --icon src/main/resources/app-icon.ico --win-menu --win-shortcut
+jpackage --type exe --app-version 1.0.0 --copyright "copyright" --description "Demo Application" --input build --name DemoApp --main-jar demo-app-1.0-SNAPSHOT.jar --main-class com.csg.demo.DemoApp --icon src/main/resources/app-icon.ico --license-file LICENSE.txt --win-dir-chooser --win-menu --win-shortcut-prompt --verbose
+```
+
+### deb - Linux
+
+```bash
+# WSL environment on Windows
+sudo apt-get update
+sudo apt-get install fakeroot   # Install, if required by jpackage
+jpackage \
+  --type deb \
+  --app-version 1.0.0 \
+  --copyright "copyright" \
+  --description "Demo Application" \
+  --input build \
+  --name DemoApp \
+  --main-jar demo-app-1.0-SNAPSHOT.jar \
+  --main-class com.csg.demo.DemoApp \
+  --icon src/main/resources/app-icon.png \
+  --license-file LICENSE.txt \
+  --linux-package-name demoapp \
+  --linux-rpm-license-type "Apache 2.0" \
+  --verbose
+
+# Inspect generated deb package
+dpkg-deb -c demoapp_1.0.0_amd64.deb  # List contents
+dpkg-deb -x demoapp_1.0.0_amd64.deb tmpfolder # Extract contents
+
+# Install
+sudo mkdir -p /usr/share/desktop-directories # Required in WSL
+sudo dpkg -i demoapp_1.0.0_amd64.deb
+sudo apt-get install -f # fix if there are any missing dependencies
+dpkg -l # list installed apps
+dpkg -L demoapp # lists files installed by the package
+
+# Run
+cd /opt/demoapp/bin
+./DemoApp
+
+# Uninstall
+sudo dpkg -r demoapp
 ```
 
 ### icon
