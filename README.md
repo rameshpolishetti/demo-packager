@@ -16,7 +16,10 @@ java -cp "target/demo-app-1.0-SNAPSHOT.jar:target/lib/log4j-api-2.20.0.jar:targe
 ### exe - Windows
 
 ```bash
-jpackage --type exe --app-version 1.0.0 --copyright "copyright" --description "Demo Application" --input build --name DemoApp --main-jar demo-app-1.0-SNAPSHOT.jar --main-class com.csg.demo.DemoApp --icon src/main/resources/app-icon.ico --license-file LICENSE.txt --win-dir-chooser --win-menu --win-shortcut-prompt --verbose
+# Install WiX Toolset from https://www.firegiant.com/wixtoolset/
+
+# Generate exe installer
+jpackage --type exe --app-version 1.0.0 --copyright "copyright" --description "Demo Application" --input build --name DemoApp --main-jar demo-app-1.0-SNAPSHOT.jar --main-class com.csg.demo.DemoApp --icon src/main/resources/app-icon.ico --license-file LICENSE.txt --win-dir-chooser --win-menu --win-shortcut --win-shortcut-prompt --verbose
 ```
 
 ### deb - Linux
