@@ -11,6 +11,17 @@ java -cp "target/demo-app-1.0-SNAPSHOT.jar:target/lib/log4j-api-2.20.0.jar:targe
 
 ```
 
+## Package using izpack
+
+### - Windows
+```bash
+# Install IzPack 5.2.4 from https://izpack.org/downloads/
+mvn clean package
+cd target
+java -jar demo-app-1.0-SNAPSHOT-installer.jar
+
+```
+
 ## Package using jpackage
 
 ### exe - Windows
