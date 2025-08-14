@@ -10,6 +10,8 @@
     <properties>
         <izpack.version>5.2.4</izpack.version>
         <izpack.staging>${project.build.directory}/staging</izpack.staging>
+        <pom.prop.name>TIBCO</pom.prop.name>
+        <pom.prop.email>tibco@cloud.com</pom.prop.email>
     </properties>
 
     <dependencies>
