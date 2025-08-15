@@ -23,8 +23,13 @@
   </locale>
 
   <variables>
-    <variable name="INSTALL_DIR" value="$INSTALL_PATH"/>
+    <!-- <variable name="INSTALL_DIR" value="$INSTALL_PATH"/> -->
+    <variable name="APP_NAME" value="${APP_NAME}"/>
   </variables>
+
+  <dynamicvariables>
+    <variable name="HOSTNAME" checkonce="true" executable="hostname" type="process"/>
+  </dynamicvariables>
  
   <guiprefs width="600" height="500" resizable="no">
     <!-- <splash>images/peas_load.gif</splash> -->
